@@ -25,9 +25,19 @@ public class Game {
 
             currentRounds = nextRounds(currentRounds);
         }
+
+        message.finalWinner(getFinalWinnerList());
     }
 
     private int nextRounds(int currentRounds) {
         return currentRounds + 1;
+    }
+
+    private String getFinalWinnerList() {
+        String finalWinnerList = "";
+
+        finalWinnerList = cars.getFinalWinnerList();
+
+        return finalWinnerList;
     }
 }

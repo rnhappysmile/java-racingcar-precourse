@@ -29,4 +29,9 @@ public class Message {
 
         return sb.toString();
     }
+
+
+    public void finalWinner(String finalWinnerList) {
+        System.out.println("최종 우승자: " + finalWinnerList);
+    }
 }

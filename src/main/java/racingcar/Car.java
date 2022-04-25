@@ -29,10 +29,12 @@ public class Car {
         }
     }
 
-    public void checkGear() {
+    public int checkGear() {
         int count = pickNumberInRange(MIN_PICK_NUMBER, MAX_PICK_NUMBER);
 
         if (CHECK_CAR_DRIVE <= count) setCarPosition(getCarPosition() + 1);
+
+        return this.carPosition;
     }
 
     public String getCarName() {
