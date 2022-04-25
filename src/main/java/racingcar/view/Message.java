@@ -45,4 +45,8 @@ public class Message {
     public void requestGameRounds() {
         System.out.println(REQUEST_GAME_ROUNDS);
     }
+
+    public void error(String errorDetail) {
+        System.out.println(errorDetail);
+    }
 }

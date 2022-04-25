@@ -51,7 +51,7 @@ public class Game {
                 this.cars = new Cars(readLine());
                 return;
             } catch (IllegalArgumentException | IllegalStateException e) {
-                System.out.println(e.getMessage());
+                message.error(e.getMessage());
             }
         }
     }
@@ -65,7 +65,7 @@ public class Game {
                 this.gameInfo = new GameInfo(readLine());
                 return;
             } catch (IllegalArgumentException | IllegalStateException e) {
-                System.out.println(e.getMessage());
+                message.error(e.getMessage());
             }
         }
     }

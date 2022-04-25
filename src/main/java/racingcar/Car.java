@@ -8,7 +8,9 @@ public class Car {
     public static final int MAX_PICK_NUMBER = 9;
     public static final int CHECK_CAR_DRIVE = 4;
     public static final int CAR_POSITION_PLUS = 1;
-    private static final String ERROR_MESSAGE = "[ERROR]";
+    public static final String ERROR_MESSAGE = "[ERROR]";
+    public static final String ERROR_EMPTY_MESSAGE = " : 입력된 자동차 이름 중 빈 문자열이 존재합니다";
+    public static final String ERROR_SIZE_MESSAGE = " : 입력된 자동차 이름의 길이 5를 초과 합니다";
 
     private String carName = "";
     private int carPosition = 0;
@@ -21,13 +23,13 @@ public class Car {
 
     private void validateEmpty(String carName) {
         if (carName == null || carName.isEmpty()) {
-            throw new IllegalArgumentException(ERROR_MESSAGE);
+            throw new IllegalArgumentException(ERROR_MESSAGE + ERROR_EMPTY_MESSAGE);
         }
     }
 
     private void validateSize(String carName) {
         if (carName.length() > CAR_NAME_SIZE) {
-            throw new IllegalArgumentException(ERROR_MESSAGE);
+            throw new IllegalArgumentException(ERROR_MESSAGE + ERROR_SIZE_MESSAGE);
         }
     }
 
