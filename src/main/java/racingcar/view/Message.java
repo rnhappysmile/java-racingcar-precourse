@@ -12,6 +12,7 @@ public class Message {
     public static final String REQUEST_GAME_ROUNDS = "시도할 회수는 몇회인가요";
 
     public void playResult() {
+        System.out.println();
         System.out.println(PLAY_RESULT_MESSAGE);
     }
 
