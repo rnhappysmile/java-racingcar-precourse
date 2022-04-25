@@ -36,7 +36,7 @@ public class Car {
     public int checkGear() {
         int count = pickNumberInRange(MIN_PICK_NUMBER, MAX_PICK_NUMBER);
 
-        if (CHECK_CAR_DRIVE <= count) setCarPosition(getCarPosition() + CAR_POSITION_PLUS);
+        if (isCarStatus(count).equals(CarStatus.DRIVE)) setCarPosition(getCarPosition() + CAR_POSITION_PLUS);
 
         return this.carPosition;
     }
@@ -51,5 +51,11 @@ public class Car {
 
     public void setCarPosition(int carPosition) {
         this.carPosition = carPosition;
+    }
+
+    private CarStatus isCarStatus(int count) {
+        if(CHECK_CAR_DRIVE <= count) return CarStatus.DRIVE;
+
+        return CarStatus.BRAKE;
     }
 }

@@ -3,8 +3,6 @@ package racingcar;
 import java.util.ArrayList;
 import java.util.List;
 
-import static camp.nextstep.edu.missionutils.Randoms.pickNumberInRange;
-
 public class Cars {
     private final String CAR_NAME_SPLIT = ",";
     private final String FIANL_WINNER_SEPARATION = ", ";
