@@ -1,7 +1,12 @@
 package racingcar;
 
+import static camp.nextstep.edu.missionutils.Randoms.pickNumberInRange;
+
 public class Car {
-    private static final int CAR_NAME_SIZE = 5;
+    public static final int CAR_NAME_SIZE = 5;
+    public static final int MIN_PICK_NUMBER = 0;
+    public static final int MAX_PICK_NUMBER = 9;
+    public static final int CHECK_CAR_DRIVE = 4;
 
     private String carName = "";
     private int carPosition = 0;
@@ -22,5 +27,19 @@ public class Car {
         if (carName.length() > CAR_NAME_SIZE) {
             throw new IllegalArgumentException("[ERROR]");
         }
+    }
+
+    public int getCarPosition() {
+        return carPosition;
+    }
+
+    public void setCarPosition(int carPosition) {
+        this.carPosition = carPosition;
+    }
+
+    public void checkGear() {
+        int count = pickNumberInRange(MIN_PICK_NUMBER, MAX_PICK_NUMBER);
+
+        if (CHECK_CAR_DRIVE <= count) setCarPosition(getCarPosition() + 1);
     }
 }

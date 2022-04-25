@@ -23,4 +23,10 @@ public class GameInfo {
             throw new IllegalArgumentException("[ERROR]");
         }
     }
+
+    public GameStatus isPlay(int currentRounds) {
+        if(currentRounds < this.rounds) return GameStatus.PLAY;
+
+        return GameStatus.STOP;
+    }
 }

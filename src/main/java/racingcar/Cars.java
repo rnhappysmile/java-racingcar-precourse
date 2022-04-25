@@ -3,10 +3,12 @@ package racingcar;
 import java.util.ArrayList;
 import java.util.List;
 
+import static camp.nextstep.edu.missionutils.Randoms.pickNumberInRange;
+
 public class Cars {
     private final String CAR_NAME_SPLIT = ",";
 
-    private List<Car> cars;
+    public List<Car> cars;
 
     public Cars(String carNames) {
         cars = new ArrayList<Car>();
@@ -24,5 +26,9 @@ public class Cars {
         for (String carName : divideCarNames) {
             cars.add(new Car(carName));
         }
+    }
+
+    public void checkGear() {
+        cars.forEach((car) -> car.checkGear());
     }
 }
