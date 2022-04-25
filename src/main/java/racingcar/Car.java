@@ -7,6 +7,8 @@ public class Car {
     public static final int MIN_PICK_NUMBER = 0;
     public static final int MAX_PICK_NUMBER = 9;
     public static final int CHECK_CAR_DRIVE = 4;
+    public static final int CAR_POSITION_PLUS = 1;
+    private static final String ERROR_MESSAGE = "[ERROR]";
 
     private String carName = "";
     private int carPosition = 0;
@@ -19,20 +21,20 @@ public class Car {
 
     private void validateEmpty(String carName) {
         if (carName == null || carName.isEmpty()) {
-            throw new IllegalArgumentException("[ERROR]");
+            throw new IllegalArgumentException(ERROR_MESSAGE);
         }
     }
 
     private void validateSize(String carName) {
         if (carName.length() > CAR_NAME_SIZE) {
-            throw new IllegalArgumentException("[ERROR]");
+            throw new IllegalArgumentException(ERROR_MESSAGE);
         }
     }
 
     public int checkGear() {
         int count = pickNumberInRange(MIN_PICK_NUMBER, MAX_PICK_NUMBER);
 
-        if (CHECK_CAR_DRIVE <= count) setCarPosition(getCarPosition() + 1);
+        if (CHECK_CAR_DRIVE <= count) setCarPosition(getCarPosition() + CAR_POSITION_PLUS);
 
         return this.carPosition;
     }

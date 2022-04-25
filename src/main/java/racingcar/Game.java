@@ -3,9 +3,10 @@ package racingcar;
 import racingcar.view.Message;
 
 import static camp.nextstep.edu.missionutils.Console.readLine;
-import static camp.nextstep.edu.missionutils.Randoms.pickNumberInRange;
 
 public class Game {
+    public static final int CURRENT_ROUNDS_PLUS = 1;
+
     private Cars cars;
     private GameInfo gameInfo;
     private Message message;
@@ -30,7 +31,7 @@ public class Game {
     }
 
     private int nextRounds(int currentRounds) {
-        return currentRounds + 1;
+        return currentRounds + CURRENT_ROUNDS_PLUS;
     }
 
     private String getFinalWinnerList() {
