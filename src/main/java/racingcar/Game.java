@@ -2,20 +2,21 @@ package racingcar;
 
 import racingcar.view.Message;
 
+import static camp.nextstep.edu.missionutils.Console.readLine;
 import static camp.nextstep.edu.missionutils.Randoms.pickNumberInRange;
 
 public class Game {
     private Cars cars;
     private GameInfo gameInfo;
 
-    public Game(Cars cars, GameInfo gameInfo) {
-        this.cars = cars;
-        this.gameInfo = gameInfo;
-    }
-
     public void play() {
         int currentRounds = 0;
         Message message = new Message();
+
+        message.requestCarsName();
+        this.cars = new Cars(readLine());
+        message.requestGameRounds();
+        this.gameInfo = new GameInfo(readLine());
 
         message.playResult();
         while(gameInfo.isPlay(currentRounds).equals(GameStatus.PLAY)) {
