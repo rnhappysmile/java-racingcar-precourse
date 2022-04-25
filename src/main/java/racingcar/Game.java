@@ -8,15 +8,14 @@ import static camp.nextstep.edu.missionutils.Randoms.pickNumberInRange;
 public class Game {
     private Cars cars;
     private GameInfo gameInfo;
+    private Message message;
 
     public void play() {
         int currentRounds = 0;
-        Message message = new Message();
+        message = new Message();
 
-        message.requestCarsName();
-        this.cars = new Cars(readLine());
-        message.requestGameRounds();
-        this.gameInfo = new GameInfo(readLine());
+        requestCarsName();
+        requestGameRounds();
 
         message.playResult();
         while(gameInfo.isPlay(currentRounds).equals(GameStatus.PLAY)) {
@@ -40,5 +39,33 @@ public class Game {
         finalWinnerList = cars.getFinalWinnerList();
 
         return finalWinnerList;
+    }
+
+    private void requestCarsName() {
+        message = new Message();
+
+        while(true) {
+            try {
+                message.requestCarsName();
+                this.cars = new Cars(readLine());
+                return;
+            } catch (IllegalArgumentException | IllegalStateException e) {
+                System.out.println(e.getMessage());
+            }
+        }
+    }
+
+    private void requestGameRounds() {
+        message = new Message();
+
+        while(true) {
+            try {
+                message.requestGameRounds();
+                this.gameInfo = new GameInfo(readLine());
+                return;
+            } catch (IllegalArgumentException | IllegalStateException e) {
+                System.out.println(e.getMessage());
+            }
+        }
     }
 }
