@@ -29,17 +29,21 @@ public class Car {
         }
     }
 
+    public void checkGear() {
+        int count = pickNumberInRange(MIN_PICK_NUMBER, MAX_PICK_NUMBER);
+
+        if (CHECK_CAR_DRIVE <= count) setCarPosition(getCarPosition() + 1);
+    }
+
+    public String getCarName() {
+        return carName;
+    }
+
     public int getCarPosition() {
         return carPosition;
     }
 
     public void setCarPosition(int carPosition) {
         this.carPosition = carPosition;
-    }
-
-    public void checkGear() {
-        int count = pickNumberInRange(MIN_PICK_NUMBER, MAX_PICK_NUMBER);
-
-        if (CHECK_CAR_DRIVE <= count) setCarPosition(getCarPosition() + 1);
     }
 }

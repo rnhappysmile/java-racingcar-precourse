@@ -11,7 +11,7 @@ public class GameInfo {
 
         validateSize(tempCount);
 
-        this.rounds = rounds;
+        this.rounds = tempCount;
     }
 
     private int stringToInteger(String command) {
